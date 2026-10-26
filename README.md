@@ -1,4 +1,6 @@
-# CI/CD Tools and Practices Final Project Template
+# CI/CD Tools and Practices Final Project
+
+A Python Flask counter microservice with a complete CI/CD pipeline: GitHub Actions runs linting (flake8) and unit tests (nose) on every push and pull request, and Tekton tasks on an OpenShift pipeline clean up the workspace, lint, test, build the image and deploy the application.
 
 This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
 
