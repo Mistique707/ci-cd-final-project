@@ -72,6 +72,8 @@ spec:
       params:
         - name: IMAGE
           value: $(params.build-image)
+        - name: BUILD_EXTRA_ARGS
+          value: "--ulimit nproc=4096:4096"
 
     - name: deploy
       runAfter:
