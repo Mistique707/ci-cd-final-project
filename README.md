@@ -1,16 +1,20 @@
 # CI/CD Tools and Practices Final Project
 
-A Python Flask counter microservice with a complete CI/CD pipeline: GitHub Actions runs linting (flake8) and unit tests (nose) on every push and pull request, and Tekton tasks on an OpenShift pipeline clean up the workspace, lint, test, build the image and deploy the application.
+**Project name:** `ci-cd-final-project`
+**Repository:** https://github.com/Mistique707/ci-cd-final-project
 
-This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
+A Python Flask counter microservice with a complete CI/CD pipeline. GitHub Actions runs linting (flake8) and unit tests (nose) on every push and pull request to `main`. A Tekton pipeline on OpenShift cleans up the workspace, clones the repository, lints, runs the unit tests, builds the image with buildah and deploys the application.
 
-## Usage
+## Project structure
 
-This repository is to be used as a template to create your own repository in your own GitHub account. No need to Fork it as it has been set up as a Template. This will avoid confusion when making Pull Requests in the future.
-
-From the GitHub **Code** page, press the green **Use this template** button to create your own repository from this template.
-
-Name your repo: `ci-cd-final-project`.
+| Path | Purpose |
+|------|---------|
+| `service/` | Flask counter microservice |
+| `tests/` | Unit tests (nose) |
+| `.github/workflows/workflow.yml` | GitHub Actions CI workflow: Lint with flake8, Run unit tests with nose |
+| `.tekton/tasks.yml` | Tekton tasks: `cleanup` and `nose` (Run unit tests with nose) |
+| `.tekton/flake8.yml` | Tekton task: `flake8` |
+| `.tekton/pipeline.yml` | Tekton pipeline: cleanup, git-clone, flake8, nose, buildah, deploy |
 
 ## Setup
 
@@ -25,9 +29,6 @@ Then you must exit the shell and start a new one for the Python virtual environm
 ```bash
 exit
 ```
-
-## Tasks
-
 
 ## License
 
